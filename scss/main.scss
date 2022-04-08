@@ -14,6 +14,10 @@ html {
     overflow-x: hidden;
 }
 
+html.no-scroll {
+    overflow-y: hidden;
+}
+
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
@@ -360,7 +364,7 @@ input::placeholder {
 .input-control {
     position: relative;
     height: fit-content;
-    margin: 15px 0;
+    margin-bottom: 15px;
     label {
         opacity: 0;
         position: absolute;
@@ -468,9 +472,6 @@ input::placeholder {
             top: -1px;
         }
     }
-    &.notice-visible {
-        display: block;
-    }
     &.success {
         &::after {
             content: "\f058";
@@ -505,7 +506,7 @@ input::placeholder {
 .select-control {
     position: relative;
     padding: 0;
-    margin: 15px 0;
+    margin-bottom: 15px;
     label {
         position: absolute;
         top: -18px;
@@ -644,12 +645,16 @@ input::placeholder {
 .main {
     max-width: 100%;
     width: 100%;
-    max-height: 100vh;
-    overflow-y: scroll;
+    &.scrolled {
+        // for pages with sidebar navigation
+        max-height: 100vh;
+        overflow-y: scroll;
+    }
+    &-wrapper {
+        border-top: 3px solid var(--primary-color);
+    }
     &-inner {
         padding: 40px 50px;
-    }
-    &-container {
     }
     &-header {
         display: flex;
@@ -688,7 +693,7 @@ input::placeholder {
         }
     }
     &-banner {
-        min-height: 336px;
+        min-height: 220px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -795,63 +800,23 @@ input::placeholder {
         padding: 40px 15px;
         margin: 0 auto;
         text-align: center;
-        &__breadcrumbs {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            column-gap: 20px;
-            max-width: 515px;
-            margin: 0 auto 70px;
-            @media screen and (max-width: $phone) {
-                flex-direction: column;
-                row-gap: 10px;
-            }
-            &-item {
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid #cdcdcd;
-                font-weight: 600;
-                font-size: 14px;
-                line-height: 18px;
-                color: var(--main-text-color);
-                background-color: #ffffff;
-                &.active {
-                    color: #ffffff;
-                    background: var(--primary-color);
-                    border: none;
-                }
-                &.passed {
-                    font-size: 0;
-                    border: 1px solid var(--primary-color);
-                    &::before {
-                        font-family: "FontAwesome";
-                        content: "\f00c";
-                        color: var(--primary-color);
-                        font-size: 14px;
-                        line-height: 20px;
-                    }
-                }
-            }
-            &-spacer {
-                max-width: 170px;
-                height: 1px;
-                width: 100%;
-                background-color: #cdcdcd;
-                @media screen and (max-width: $phone) {
-                    height: 36px;
-                    width: 1px;
-                }
-            }
-        }
         &__title {
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             &.with-description {
                 margin-bottom: 20px;
             }
+            &.big-margin {
+                margin-bottom: 60px;
+            }
+        }
+        &__notice {
+            position: absolute;
+            top: 11px;
+            right: 0;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            color: #f79618;
         }
         &__text {
             margin-bottom: 40px;
@@ -903,25 +868,28 @@ input::placeholder {
         &__row {
             column-gap: 20px;
             align-items: center;
+            &.with-notice {
+                // if any of the row fields has bottom note
+                .input-control,
+                .select-control {
+                    .input-control__notice {
+                        display: block;
+                    }
+                    margin-bottom: 30px;
+                }
+            }
+            &.with-label {
+                // if any of the the row field has top label
+                .input-control,
+                .select-control {
+                    margin-top: 15px;
+                }
+            }
             @media screen and (max-width: $tablet) {
                 flex-direction: column;
                 & * {
                     max-width: 100% !important;
                 }
-            }
-        }
-        &__notice {
-            position: absolute;
-            top: 11px;
-            right: 0;
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 18px;
-            color: #f79618;
-            @media screen and (max-width: $small-phone) {
-                font-size: 10px;
-                line-height: 14px;
-                top: 30px;
             }
         }
         &__acceptance {
@@ -933,6 +901,7 @@ input::placeholder {
                 text-align: left;
                 text-transform: none;
                 padding: 11px 15px;
+                margin-bottom: 0;
                 background-color: #ffffff;
                 border-bottom: 1px solid #e7e7e7;
                 @media screen and (max-width: $small-phone) {
@@ -945,6 +914,7 @@ input::placeholder {
                 max-height: 200px;
                 overflow-y: scroll;
                 border-bottom: 1px solid #e7e7e7;
+                background-color: #f9f9f9;
             }
         }
     }
@@ -1007,42 +977,3 @@ input::placeholder {
         }
     }
 }
-
-// .search {
-//     background-color: #F4F4F4;
-//     padding: 21px 0 10px;
-//     &__title {
-//         padding: 0 40px;
-//     }
-//     &__inner {
-//         padding: 0 40px;
-//         column-gap: 55px;
-//     }
-//     &__form {
-//         max-width: 50%;
-//         width: 100%;
-//         [name="search-input"] {
-//             border-radius: 3px 0 0 3px;
-//             max-width: 100%;
-//             width: 100%;
-//         }
-//         .submit-btn {
-//             max-width: 135px;
-//             border-radius: 0 3px 3px 0;
-//             margin-left: -1px;
-//         }
-//     }
-//     &__select-control {
-//         column-gap: 13px;
-//         label {
-//             position: static;
-//             max-width: 132px;
-//             width: 100%;
-//             font-weight: 700;
-//             font-size: 16px;
-//             line-height: 20px;
-//             color: var(--secondary-text-color);
-//             padding-top: 3px;
-//         }
-//     }
-// }

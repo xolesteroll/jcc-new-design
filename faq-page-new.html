@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="./css/vars.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/faq-page.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/faq-page.css">
 </head>
 
 <body class="homepage d-flex flex-column h-100">
@@ -24,76 +24,74 @@
 
         <section class="main">
             <div class="main-banner">
-                <div class="main-action-box">
-                    <h1 class="main-title">Frequently Asked Questions</h1>
-                </div>
-            </div>
+            </div>    
 
+        </section>
+
+        <section class="contact">
             <div class="container">
-                <div class="main-inner main-dialogue">
-                    <section class="main-contact contact d-flex ">
-                        <div class="main-contact__col">
-                            <h2 class="main-contact__title contact__title">
-                                Need more information?
-                            </h2>
-                            <div class="main-contact__img contact__img">
-                                <img src="./assets/icons/phone-guy.svg" alt="">
-                            </div>
+                <div class="contact-inner">
+                    <div class="contact__col">
+                        <h2 class="contact__title contact__title">
+                            Need more information?
+                        </h2>
+                        <div class="contact__img contact__img">
+                            <img src="./assets/icons/phone-guy.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="contact__contacts contact__contacts contact__col d-flex flex-column">
+                        <h3 class="contact__contacts-title contact__contacts-title w-100">
+                            For more information contact us at:
+                        </h3>
+
+                        <div class="contact__contacts-controls d-flex">
+                            <a href="tel:+35722868500" class="button iconed">
+                                <i class="fa-solid fa-phone"></i> +357 22 868 500
+                            </a>
+                            <a href="mailto:trust-services@jcc.com.cy" class="button iconed">
+                                <i class="fa-regular fa-envelope"></i> trust-services@jcc.com.cy
+                            </a>
                         </div>
 
-                        <div class="main-contact__contacts contact__contacts main-contact__col d-flex flex-column">
-                            <h3 class="main-contact__contacts-title contact__contacts-title w-100">
-                                For more information contact us at:
-                            </h3>
-
-                            <div class="main-contact__contacts-controls d-flex">
-                                <a href="tel:+35722868500" class="button iconed">
-                                    <i class="fa-solid fa-phone"></i> +357 22 868 500
-                                </a>
-                                <a href="mailto:trust-services@jcc.com.cy" class="button iconed">
-                                    <i class="fa-regular fa-envelope"></i> trust-services@jcc.com.cy
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </section>
-                </div>
-            </div>
-
-            <div class="main-search search">
-                <div class="container">
-                    <h3 class="main-search__title search__title">
-                        Can’t find what you’re looking for?
-                    </h3>
-                    <div class="main-search__inner search__inner d-flex justify-content-between">
-                        <form class="main-search__form search__form">
-                            <div
-                                class="main-search__input-control search__input-control input-control iconed search d-flex">
-                                <label for="search-input">Search any question...</label>
-                                <input type="text" name="search-input" placeholder="Search any question...">
-                                <button class="main-search__btn search__btn button submit-btn"
-                                    type="submit">SUBMIT</button>
-                            </div>
-                        </form>
-
-                        <form class="main-search__form search-form">
-                            <div
-                                class="main-search__select-control search__select-control select-control d-flex align-items-center">
-                                <label for="search-category-select">Filter by Category:</label>
-                                <select name="search-category-select" id="search-category-select">
-                                    <option value="0" selected disabled hidden>Select question category</option>
-                                    <option value="1">Category</option>
-                                    <option value="2">Category</option>
-                                    <option value="3">Category</option>
-                                    <option value="4">Category</option>
-                                </select>
-                            </div>
-                        </form>
                     </div>
                 </div>
-            </div>
 
+
+            </div>
+        </section>
+
+        <section class="main-search search">
+            <div class="container">
+                <h3 class="main-search__title search__title">
+                    Can’t find what you’re looking for?
+                </h3>
+                <div class="main-search__inner search__inner d-flex justify-content-between">
+                    <form class="main-search__form search__form">
+                        <div
+                            class="main-search__input-control search__input-control input-control iconed search d-flex">
+                            <label for="search-input">Search any question...</label>
+                            <input type="text" name="search-input" placeholder="Search any question...">
+                            <button class="main-search__btn search__btn button submit-btn"
+                                type="submit">SUBMIT</button>
+                        </div>
+                    </form>
+
+                    <form class="main-search__form search-form">
+                        <div
+                            class="main-search__select-control search__select-control select-control d-flex align-items-center">
+                            <label for="search-category-select">Filter by Category:</label>
+                            <select name="search-category-select" id="search-category-select">
+                                <option value="0" selected disabled hidden>Select question category</option>
+                                <option value="1">Category</option>
+                                <option value="2">Category</option>
+                                <option value="3">Category</option>
+                                <option value="4">Category</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="faq">

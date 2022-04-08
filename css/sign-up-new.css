@@ -153,6 +153,7 @@
 		color: var(--main-text-color);
 		background-color: #2ac40018;
 		border-radius: 4px;
+		text-align: center;
 }
 .sign-up__table-table tr {
 		border-bottom: 1px solid #e7e7e7;
@@ -217,4 +218,13 @@
 }
 .sign-up__table-table tr .contacts {
 		margin-bottom: 30px;
+}
+
+.main-form__checkbox-control {
+		text-align: left;
+		padding: 15px;
+		background-color: #ffffff;
+		display: flex;
+		align-items: center;
+		column-gap: 15px;
 }

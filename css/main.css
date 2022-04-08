@@ -9,6 +9,10 @@ html {
 		overflow-x: hidden;
 }
 
+html.no-scroll {
+		overflow-y: hidden;
+}
+
 body {
 		margin: 0;
 		font-family: "Roboto", sans-serif;
@@ -367,7 +371,7 @@ input::placeholder {
 .input-control {
 		position: relative;
 		height: fit-content;
-		margin: 15px 0;
+		margin-bottom: 15px;
 }
 .input-control label {
 		opacity: 0;
@@ -463,9 +467,6 @@ input::placeholder {
 		left: 0;
 		top: -1px;
 }
-.input-control.notice-visible {
-		display: block;
-}
 .input-control.success::after {
 		content: "";
 		color: #00d491;
@@ -493,7 +494,7 @@ input::placeholder {
 .select-control {
 		position: relative;
 		padding: 0;
-		margin: 15px 0;
+		margin-bottom: 15px;
 }
 .select-control label {
 		position: absolute;
@@ -626,8 +627,13 @@ input::placeholder {
 .main {
 		max-width: 100%;
 		width: 100%;
+}
+.main.scrolled {
 		max-height: 100vh;
 		overflow-y: scroll;
+}
+.main-wrapper {
+		border-top: 3px solid var(--primary-color);
 }
 .main-inner {
 		padding: 40px 50px;
@@ -667,7 +673,7 @@ input::placeholder {
 		opacity: 1;
 }
 .main-banner {
-		min-height: 336px;
+		min-height: 220px;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -776,67 +782,23 @@ input::placeholder {
 		margin: 0 auto;
 		text-align: center;
 }
-.main-form__breadcrumbs {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		column-gap: 20px;
-		max-width: 515px;
-		margin: 0 auto 70px;
-}
-@media screen and (max-width: 765px) {
-		.main-form__breadcrumbs {
-				flex-direction: column;
-				row-gap: 10px;
-		}
-}
-.main-form__breadcrumbs-item {
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 1px solid #cdcdcd;
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 18px;
-		color: var(--main-text-color);
-		background-color: #ffffff;
-}
-.main-form__breadcrumbs-item.active {
-		color: #ffffff;
-		background: var(--primary-color);
-		border: none;
-}
-.main-form__breadcrumbs-item.passed {
-		font-size: 0;
-		border: 1px solid var(--primary-color);
-}
-.main-form__breadcrumbs-item.passed::before {
-		font-family: "FontAwesome";
-		content: "";
-		color: var(--primary-color);
-		font-size: 14px;
-		line-height: 20px;
-}
-.main-form__breadcrumbs-spacer {
-		max-width: 170px;
-		height: 1px;
-		width: 100%;
-		background-color: #cdcdcd;
-}
-@media screen and (max-width: 765px) {
-		.main-form__breadcrumbs-spacer {
-				height: 36px;
-				width: 1px;
-		}
-}
 .main-form__title {
-		margin-bottom: 40px;
+		margin-bottom: 15px;
 }
 .main-form__title.with-description {
 		margin-bottom: 20px;
+}
+.main-form__title.big-margin {
+		margin-bottom: 60px;
+}
+.main-form__notice {
+		position: absolute;
+		top: 11px;
+		right: 0;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 18px;
+		color: #f79618;
 }
 .main-form__text {
 		margin-bottom: 40px;
@@ -891,28 +853,24 @@ input::placeholder {
 		column-gap: 20px;
 		align-items: center;
 }
+.main-form__row.with-notice .input-control,
+.main-form__row.with-notice .select-control {
+		margin-bottom: 30px;
+}
+.main-form__row.with-notice .input-control .input-control__notice,
+.main-form__row.with-notice .select-control .input-control__notice {
+		display: block;
+}
+.main-form__row.with-label .input-control,
+.main-form__row.with-label .select-control {
+		margin-top: 15px;
+}
 @media screen and (max-width: 1025px) {
 		.main-form__row {
 				flex-direction: column;
 		}
 		.main-form__row * {
 				max-width: 100% !important;
-		}
-}
-.main-form__notice {
-		position: absolute;
-		top: 11px;
-		right: 0;
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 18px;
-		color: #f79618;
-}
-@media screen and (max-width: 450px) {
-		.main-form__notice {
-				font-size: 10px;
-				line-height: 14px;
-				top: 30px;
 		}
 }
 .main-form__acceptance {
@@ -925,6 +883,7 @@ input::placeholder {
 		text-align: left;
 		text-transform: none;
 		padding: 11px 15px;
+		margin-bottom: 0;
 		background-color: #ffffff;
 		border-bottom: 1px solid #e7e7e7;
 }
@@ -939,6 +898,7 @@ input::placeholder {
 		max-height: 200px;
 		overflow-y: scroll;
 		border-bottom: 1px solid #e7e7e7;
+		background-color: #f9f9f9;
 }
 
 .contact {

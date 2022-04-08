@@ -6,7 +6,7 @@ $smallest-phone: 340px;
 
 .main {
     &-banner {
-        background-image: url(../assets/images/faq-bg-image.jpg);
+        background-image: url(../assets/images/faq-banner.jpg);
     }
     &-inner {
         background-color: #ffffff;
@@ -16,56 +16,7 @@ $smallest-phone: 340px;
             padding: 20px 10px;
         }
     }
-    &-contact {
-        margin: 0;
-        max-width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        @media screen and (max-width: $tablet) {
-            text-align: center;
-            flex-direction: column;
-            align-items: center;
-        }
-        &__col {
-            max-width: 41%;
-            width: 100%;
-            @media screen and (max-width: $notebook) {
-                max-width: 50%;
-            }
-            @media screen and (max-width: $tablet) {
-                max-width: 80%;
-            }
-        }
-        &__title {
-            margin-left: 50px;
-            @media screen and (max-width: $tablet) {
-                width: fit-content;
-                margin: 0 auto 15px;
-            }
-        }
-        &__contacts {
-            &-title {
-                text-align: left;
-                @media screen and (max-width: $tablet) {
-                    text-align: center;
-                }
-            }
-            &-controls {
-                width: 100%;
-                column-gap: 15px;
-                justify-content: flex-start;
-                @media screen and (max-width: $tablet) {
-                    justify-content: center;
-                }
-                @media screen and (max-width: $phone) {
-                    flex-direction: column;
-                    row-gap: 15px;
-                }
-            }
-        }
-    }
+
     &-search {
         background-color: #f4f4f4;
         padding: 21px 0 10px;
@@ -75,11 +26,7 @@ $smallest-phone: 340px;
                 margin-bottom: 50px;
             }
         }
-        &__title {
-            padding: 0 40px;
-        }
         &__inner {
-            padding: 0 40px;
             column-gap: 55px;
             @media screen and (max-width: $tablet) {
                 flex-direction: column;
@@ -105,8 +52,10 @@ $smallest-phone: 340px;
         }
         &__btn {
             max-width: 135px;
-            border-radius: 0 3px 3px 0;
             margin-left: -1px;
+            &.submit-btn {
+                border-radius: 0 3px 3px 0;
+            }
             @media screen and (max-width: $phone) {
                 position: absolute;
                 top: 100%;
@@ -119,6 +68,9 @@ $smallest-phone: 340px;
             column-gap: 13px;
             @media screen and (max-width: $small-phone) {
                 column-gap: 0;
+            }
+            .select-items {
+                left: 145px;
             }
             select {
                 min-width: 200px;
@@ -141,9 +93,90 @@ $smallest-phone: 340px;
     }
 }
 
+.contact {
+    max-width: 100%;
+    padding: 30px 0 80px;
+    margin-bottom: 0;
+    &-inner {
+        margin: 0;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        @media screen and (max-width: $tablet) {
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__col {
+        max-width: 41%;
+        width: 100%;
+        @media screen and (max-width: $notebook) {
+            max-width: 50%;
+        }
+        @media screen and (max-width: $tablet) {
+            max-width: 80%;
+        }
+    }
+    &__title {
+        margin-left: 50px;
+        position: relative;
+        margin-bottom: 40px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -14px;
+            top: -3px;
+            transform: translateX(-100%);
+            width: 36px;
+            height: 36px;
+            background-image: url(../assets/icons/question-mark.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            @media screen and (max-width: $phone) {
+                left: -5px;
+                top: 4px;
+                width: 25px;
+                height: 25px;
+            }
+        }
+        @media screen and (max-width: $tablet) {
+            width: fit-content;
+            margin: 0 auto 15px;
+        }
+        @media screen and (max-width: $phone) {
+            margin-left: 25px;
+        }
+    }
+    &__contacts {
+        &-title {
+            text-align: left;
+            @media screen and (max-width: $tablet) {
+                text-align: center;
+            }
+        }
+        &-controls {
+            width: 100%;
+            column-gap: 15px;
+            justify-content: flex-start;
+            @media screen and (max-width: $tablet) {
+                justify-content: center;
+            }
+            @media screen and (max-width: $phone) {
+                flex-direction: column;
+                row-gap: 15px;
+            }
+        }
+    }
+}
+
 .faq {
     &-inner {
-        padding: 55px 40px;
+        padding: 20px 0;
         @media screen and (max-width: $phone) {
             padding: 30px 10px;
         }

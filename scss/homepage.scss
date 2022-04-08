@@ -11,8 +11,7 @@ $smallest-phone: 340px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 100vh;
-        min-height: 92vh;
+        min-height: 600px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -57,7 +56,6 @@ $smallest-phone: 340px;
         }
     }
     &-info {
-        margin-top: -12vh;
         background-color: #ffffff;
         border-radius: 4px;
         padding: 60px 40px;

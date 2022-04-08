@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .main-banner {
-		background-image: url(../assets/images/faq-bg-image.jpg);
+		background-image: url(../assets/images/faq-banner.jpg);
 }
 .main-inner {
 		background-color: #ffffff;
@@ -10,68 +10,6 @@
 @media screen and (max-width: 450px) {
 		.main-inner {
 				padding: 20px 10px;
-		}
-}
-.main-contact {
-		margin: 0;
-		max-width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-end;
-}
-@media screen and (max-width: 1025px) {
-		.main-contact {
-				text-align: center;
-				flex-direction: column;
-				align-items: center;
-		}
-}
-.main-contact__col {
-		max-width: 41%;
-		width: 100%;
-}
-@media screen and (max-width: 1350px) {
-		.main-contact__col {
-				max-width: 50%;
-		}
-}
-@media screen and (max-width: 1025px) {
-		.main-contact__col {
-				max-width: 80%;
-		}
-}
-.main-contact__title {
-		margin-left: 50px;
-}
-@media screen and (max-width: 1025px) {
-		.main-contact__title {
-				width: fit-content;
-				margin: 0 auto 15px;
-		}
-}
-.main-contact__contacts-title {
-		text-align: left;
-}
-@media screen and (max-width: 1025px) {
-		.main-contact__contacts-title {
-				text-align: center;
-		}
-}
-.main-contact__contacts-controls {
-		width: 100%;
-		column-gap: 15px;
-		justify-content: flex-start;
-}
-@media screen and (max-width: 1025px) {
-		.main-contact__contacts-controls {
-				justify-content: center;
-		}
-}
-@media screen and (max-width: 765px) {
-		.main-contact__contacts-controls {
-				flex-direction: column;
-				row-gap: 15px;
 		}
 }
 .main-search {
@@ -84,11 +22,7 @@
 				margin-bottom: 50px;
 		}
 }
-.main-search__title {
-		padding: 0 40px;
-}
 .main-search__inner {
-		padding: 0 40px;
 		column-gap: 55px;
 }
 @media screen and (max-width: 1025px) {
@@ -122,8 +56,10 @@
 }
 .main-search__btn {
 		max-width: 135px;
-		border-radius: 0 3px 3px 0;
 		margin-left: -1px;
+}
+.main-search__btn.submit-btn {
+		border-radius: 0 3px 3px 0;
 }
 @media screen and (max-width: 765px) {
 		.main-search__btn {
@@ -141,6 +77,9 @@
 		.main-search__select-control {
 				column-gap: 0;
 		}
+}
+.main-search__select-control .select-items {
+		left: 145px;
 }
 .main-search__select-control select {
 		min-width: 200px;
@@ -162,8 +101,104 @@
 		}
 }
 
+.contact {
+		max-width: 100%;
+		padding: 30px 0 80px;
+		margin-bottom: 0;
+}
+.contact-inner {
+		margin: 0;
+		max-width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+}
+@media screen and (max-width: 1025px) {
+		.contact-inner {
+				text-align: center;
+				flex-direction: column;
+				align-items: center;
+		}
+}
+.contact__col {
+		max-width: 41%;
+		width: 100%;
+}
+@media screen and (max-width: 1350px) {
+		.contact__col {
+				max-width: 50%;
+		}
+}
+@media screen and (max-width: 1025px) {
+		.contact__col {
+				max-width: 80%;
+		}
+}
+.contact__title {
+		margin-left: 50px;
+		position: relative;
+		margin-bottom: 40px;
+}
+.contact__title::before {
+		content: "";
+		position: absolute;
+		left: -14px;
+		top: -3px;
+		transform: translateX(-100%);
+		width: 36px;
+		height: 36px;
+		background-image: url(../assets/icons/question-mark.svg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+}
+@media screen and (max-width: 765px) {
+		.contact__title::before {
+				left: -5px;
+				top: 4px;
+				width: 25px;
+				height: 25px;
+		}
+}
+@media screen and (max-width: 1025px) {
+		.contact__title {
+				width: fit-content;
+				margin: 0 auto 15px;
+		}
+}
+@media screen and (max-width: 765px) {
+		.contact__title {
+				margin-left: 25px;
+		}
+}
+.contact__contacts-title {
+		text-align: left;
+}
+@media screen and (max-width: 1025px) {
+		.contact__contacts-title {
+				text-align: center;
+		}
+}
+.contact__contacts-controls {
+		width: 100%;
+		column-gap: 15px;
+		justify-content: flex-start;
+}
+@media screen and (max-width: 1025px) {
+		.contact__contacts-controls {
+				justify-content: center;
+		}
+}
+@media screen and (max-width: 765px) {
+		.contact__contacts-controls {
+				flex-direction: column;
+				row-gap: 15px;
+		}
+}
+
 .faq-inner {
-		padding: 55px 40px;
+		padding: 20px 0;
 }
 @media screen and (max-width: 765px) {
 		.faq-inner {

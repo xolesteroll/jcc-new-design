@@ -200,5 +200,5 @@
 		display: none;
 }
 .sidebar.expanded .sidebar-nav__text {
-		transition: font-size 0.4s cubic-bezier(1, -0.04, 0, 1.01);
+		transition: font-size 0.4s cubic-bezier(1, -0.04, 0.54, 1.01);
 }

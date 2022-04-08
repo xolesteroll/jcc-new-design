@@ -50,6 +50,10 @@
 		font-size: 20px;
 		line-height: 20px;
 		color: #ffffff;
+		transition: color 0.2s;
+}
+.footer-social__item a:hover i {
+		color: var(--primary-color);
 }
 .footer-copyright {
 		background-color: #5a5a5a;
@@ -59,4 +63,10 @@
 		font-size: 13px;
 		line-height: 20px;
 		color: #ffffff;
+}
+.footer-copyright__text a {
+		transition: 0.2s;
+}
+.footer-copyright__text a:hover {
+		color: var(--primary-color);
 }

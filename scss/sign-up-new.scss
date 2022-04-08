@@ -61,6 +61,9 @@ $smallest-phone: 340px;
             text-transform: uppercase;
             color: var(--primary-color);
             outline: 0px solid transparent;
+            &:focus {
+                outline: none;
+            }
             &:hover {
                 background-color: var(--primary-color);
                 color: #ffffff;

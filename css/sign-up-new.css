@@ -56,6 +56,9 @@
 		color: var(--primary-color);
 		outline: 0px solid transparent;
 }
+.sign-up__providers-btn:focus {
+		outline: none;
+}
 .sign-up__providers-btn:hover {
 		background-color: var(--primary-color);
 		color: #ffffff;

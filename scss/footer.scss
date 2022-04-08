@@ -60,6 +60,12 @@ $smallest-phone: 340px;
                 font-size: 20px;
                 line-height: 20px;
                 color: #ffffff;
+                transition: color 0.2s;
+            }
+            &:hover {
+                i {
+                    color: var(--primary-color);
+                }
             }
         }
     }
@@ -70,6 +76,12 @@ $smallest-phone: 340px;
             font-size: 13px;
             line-height: 20px;
             color: #ffffff;
+            a {
+                transition: 0.2s;
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
         }
     }
 }

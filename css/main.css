@@ -449,6 +449,9 @@ input::placeholder {
 		border: 1px solid var(--primary-color);
 		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.07);
 }
+.input-control.active ::placeholder {
+		font-size: 0;
+}
 .input-control__notice {
 		position: absolute;
 		bottom: -18px;

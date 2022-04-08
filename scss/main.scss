@@ -293,6 +293,8 @@ input::placeholder {
     color: #cdcdcd;
 }
 
+
+
 .input-popup {
     position: absolute;
     z-index: 100;
@@ -452,6 +454,9 @@ input::placeholder {
             outline: 1px solid transparent;
             border: 1px solid var(--primary-color);
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.07);
+        }
+        ::placeholder {
+            font-size: 0;
         }
     }
     &__notice {

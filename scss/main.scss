@@ -16,6 +16,9 @@ html {
 
 html.no-scroll {
     overflow-y: hidden;
+    @media (max-width: 1025px) {
+        overflow-y: auto;
+    }
 }
 
 body {
@@ -170,6 +173,10 @@ a {
         padding: 14px 3px;
         &.wide {
             min-width: 290px;
+            @media (max-width: $small-phone) {
+                min-width: auto;
+                width: 100%;
+            }
         }
         &.primary {
             color: var(--primary-color);
@@ -657,6 +664,7 @@ input::placeholder {
     }
     &-wrapper {
         border-top: 3px solid var(--primary-color);
+        
     }
     &-inner {
         padding: 40px 50px;
@@ -665,6 +673,9 @@ input::placeholder {
         display: flex;
         justify-content: end;
         margin-bottom: 47px;
+        &__logo {
+            display: none;
+        }
         &__lang {
             &-list {
                 column-gap: 8px;
@@ -839,10 +850,6 @@ input::placeholder {
                 padding-bottom: 50px;
                 margin-bottom: 40px;
             }
-            @media screen and (max-width: $phone) {
-                margin: 0 10px;
-                max-width: 100%;
-            }
         }
         &__controls {
             margin-bottom: 40px;
@@ -920,6 +927,46 @@ input::placeholder {
                 overflow-y: scroll;
                 border-bottom: 1px solid #e7e7e7;
                 background-color: #f9f9f9;
+            }
+        }
+    }
+    @media(max-width: $tablet) {
+        min-height: 90vh;
+        &.scrolled {
+            max-height: none;
+            overflow: auto;
+        }
+        &-inner {
+            padding: 25px 20px;
+        }
+        &-header {
+            justify-content: space-between;
+            align-items: center;
+            &__logo {
+                display: block;
+            }
+        }
+        &-wrapper {
+            flex-direction: column-reverse;
+        }
+    }
+    @media(max-width: $phone) {
+        min-height: auto;
+        &-inner {
+            padding: 15px;
+        }
+        &-form {
+            padding: 40px 0;
+            
+        }
+    }
+    @media(max-width: $small-phone) {
+        &-form {
+            &__submit-btn {
+                width: 100%;
+            }
+            &__controls {
+                margin-bottom: 20px;
             }
         }
     }

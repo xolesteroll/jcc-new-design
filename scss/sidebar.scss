@@ -1,3 +1,9 @@
+$notebook: 1350px;
+$tablet: 1025px;
+$phone: 765px;
+$small-phone: 450px;
+$smallest-phone: 340px;
+
 .sidebar {
     max-width: 625px;
     width: 100%;
@@ -101,6 +107,48 @@
                         color: var(--primary-color);
                     }
                 }
+            }
+        }
+    }
+    @media(max-width: $tablet) {
+        max-width: 100%;
+        min-height: auto;
+        padding: 25px 0 15px;
+        #wrap {
+            display: none;
+        }
+        &-container {
+            max-width: 100%;
+        }
+        &-footer {
+            &__inner {
+                padding: 0 5px;
+            }
+            &__nav {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    @media(max-width: $phone) {
+        text-align: center;
+        &-footer {
+            &__logo {
+                margin-bottom: 40px;
+            }
+            &__nav {
+                margin-bottom: 40px;
+                &-list {
+                    flex-direction: column;
+                    column-gap: 0;
+                    row-gap: 30px;
+                }
+            }
+            &__bottom {
+                flex-direction: column-reverse;
+                row-gap: 22px;
+            }
+            &__copyright {
+                max-width: 200px;
             }
         }
     }

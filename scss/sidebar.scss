@@ -81,9 +81,9 @@ $smallest-phone: 340px;
             align-items: center;
         }
         &__copyright {
-                font-size: 13px;
-                line-height: 20px;
-                color: #ffffff;
+            font-size: 13px;
+            line-height: 20px;
+            color: #ffffff;
             a {
                 &:hover {
                     color: var(--primary-color);
@@ -110,10 +110,12 @@ $smallest-phone: 340px;
             }
         }
     }
-    @media(max-width: $tablet) {
+    @media (max-width: $tablet) {
         max-width: 100%;
         min-height: auto;
         padding: 25px 0 15px;
+        background-image: url(../assets/images/sidebar-bg-tablet.jpg);
+
         #wrap {
             display: none;
         }
@@ -129,8 +131,9 @@ $smallest-phone: 340px;
             }
         }
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
         text-align: center;
+        background-image: url(../assets/images/sidebar-bg-mobile.jpg);
         &-footer {
             &__logo {
                 margin-bottom: 40px;

@@ -53,30 +53,6 @@ $smallest-phone: 340px;
             display: flex;
             column-gap: 40px;
             width: 100%;
-            @media screen and (max-width: $tablet) {
-                transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-                display: block;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                z-index: 100;
-                transform: translateX(100%);
-                text-align: center;
-                background-color: #FFFFFF;
-                border-bottom: 3px solid var(--primary-color);
-                li a {
-                    padding: 15px 5px;
-                    width: 100%;
-                    &:hover {
-                        color: #FFFFFF;
-                        background-color: var(--primary-color);
-                    }
-                }
-                &.active {
-                    transform: translateX(0);
-                }
-            }
         }
         &__lang {
             &-list {
@@ -108,6 +84,10 @@ $smallest-phone: 340px;
                     opacity: 1;
                 }
             }
+        }
+        &__login.button {
+            min-width: 100px;
+            padding: 10px 0;
         }
         &__toggle-btn {
             border: none;
@@ -142,5 +122,111 @@ $smallest-phone: 340px;
                 display: none;
             }
         } 
+    }
+    .mobile-nav {
+        position: absolute;
+        z-index: 1;
+        transform: translateX(100%);
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100%;
+        padding: 23px;
+        text-align: center;
+        background-color: var(--primary-color);
+        transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &.active {
+            transform: translateX(0);
+        }
+        &__list {
+            li {
+                margin: 70px 0;
+            }
+            a {
+                font-size: 30px;
+                font-weight: 700;
+                color: #ffffff;
+                text-transform: uppercase;
+            }
+        }
+        &__lang {
+            &-list {
+                column-gap: 8px;
+            }
+            li {
+                display: flex;
+                align-items: center;
+            }
+            &-link {
+                width: 23px;
+                height: 23px;
+                border-radius: 50%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.25;
+                transition: opacity 0.2s;
+                &:hover {
+                    opacity: 1;
+                }
+                &.eng {
+                    background-image: url(../assets/images/lang-image-eng.png);
+                }
+                &.gr {
+                    background-image: url(../assets/images/lang-image-gr.png);
+                }
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+        &__close-btn {
+            display: block;
+            background-color: transparent;
+            border: none;
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            right: 25px;
+            top: 25px;
+            &:focus {
+                outline: none;
+            }
+            &::after, &::before {
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                height: 2px;
+                width: 29px;
+                left: 0;
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    @media screen and (max-width: $tablet) {
+        &-nav {
+            &__list {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: $phone) {
+        &-nav {
+            &__login {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: $small-phone) {
+        &-nav {
+            &__lang {
+                display: none;
+            }
+        }
     }
 }

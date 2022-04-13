@@ -96,6 +96,7 @@
 				max-width: 100%;
 				min-height: auto;
 				padding: 25px 0 15px;
+				background-image: url(../assets/images/sidebar-bg-tablet.jpg);
 		}
 		.sidebar #wrap {
 				display: none;
@@ -113,6 +114,7 @@
 @media (max-width: 765px) {
 		.sidebar {
 				text-align: center;
+				background-image: url(../assets/images/sidebar-bg-mobile.jpg);
 		}
 		.sidebar-footer__logo {
 				margin-bottom: 40px;

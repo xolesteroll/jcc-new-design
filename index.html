@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/4012debe1b.js" crossorigin="anonymous"></script>
-    <script defer src="./js/include-html.js"></script>
     <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/vars.css">
     <link rel="stylesheet" href="./css/fonts.css">
@@ -19,7 +18,56 @@
 
 <body class="homepage d-flex flex-column h-100">
     <div id="wrap" class="flex-shrink-0">
-        <div w3-include-html="header.html"></div>
+        <header class="header">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <a href="/">
+                            <img src="./assets/images/logo.png" alt="JCC logo">
+                        </a>
+                    </div>
+                    <nav class="header-nav d-flex align-items-center">       
+                        <ul class="header-nav__list">
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Signing Portal</a></li>
+                            <li><a href="#">Repository</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                        <div class="header-nav__lang">
+                            <ul class="header-nav__lang-list d-flex">
+                                <li><a class="header-nav__lang-link active eng" href="#"></a></li>
+                                <li><a class="header-nav__lang-link gr" href="#"></a></li>
+                            </ul>
+                        </div>
+                        <a class="header-nav__login button primary" href="#">Login</a>
+                        <button class="header-nav__toggle-btn">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        
+            <nav class="mobile-nav">
+                <button class="mobile-nav__close-btn">
+                </button>
+                <a class="mobile-nav__login button primary" href="#">Login</a>
+                <ul class="mobile-nav__list">
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Signing Portal</a></li>
+                    <li><a href="#">Repository</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+                <div class="mobile-nav__lang">
+                    <ul class="mobile-nav__lang-list d-flex justify-content-center">
+                        <li><a class="mobile-nav__lang-link active eng" href="#"></a></li>
+                        <li><a class="mobile-nav__lang-link gr" href="#"></a></li>
+                    </ul>
+                </div>
+            </nav>
+        
+        </header>
 
 
         <section class="main">
@@ -128,7 +176,36 @@
         </section>
     </div>
 
-    <div w3-include-html="footer.html" class="mt-auto"></div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner d-flex flex-column justify-content-center">
+                <div class="footer-logo">
+                    <a href="/">
+                        <img src="./assets/images/logo.png" alt="JCC logo">
+                    </a>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="footer-nav__list">
+                        <li class="footer-nav__item"><a href="#">Features</a></li>
+                        <li class="footer-nav__item"><a href="#">Signing Portal</a></li>
+                        <li class="footer-nav__item"><a href="#">Repository</a></li>
+                        <li class="footer-nav__item"><a href="#">FAQs</a></li>
+                        <li class="footer-nav__item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-social">
+                    <ul class="footer-social__list d-flex justify-content-center">
+                        <li class="footer-social__item"><a  href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li class="footer-social__item"><a  href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li class="footer-social__item"><a  href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="footer-copyright__text">© 2022 | <a href="#">JCC Payment Systems</a>. All rights reserved</p>
+        </div>
+    </footer>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
@@ -136,6 +213,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./libs/js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/header.js"></script>
 
 </body>
 

@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-  $("tr.view-row").on("click", function () {
-    $(this).toggleClass("open").next(".fold-row").toggleClass("open");
-  });
-
   $(".popup-trigger").mouseenter(function () {
     $(this).prev(".input-popup").removeClass('hidden');
   });
@@ -29,6 +25,7 @@ $(document).ready(function () {
       input.parentElement.classList.remove("active");
     });
   });
+
 
 
   // Custom Select styles

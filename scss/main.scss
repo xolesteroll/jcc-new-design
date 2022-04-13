@@ -300,8 +300,6 @@ input::placeholder {
     color: #cdcdcd;
 }
 
-
-
 .input-popup {
     position: absolute;
     z-index: 100;
@@ -664,7 +662,6 @@ input::placeholder {
     }
     &-wrapper {
         border-top: 3px solid var(--primary-color);
-        
     }
     &-inner {
         padding: 40px 50px;
@@ -726,10 +723,6 @@ input::placeholder {
         column-gap: 40px;
         max-width: 515px;
         margin: 0 auto 70px;
-        @media screen and (max-width: $phone) {
-            flex-direction: column;
-            row-gap: 10px;
-        }
         * {
             flex-shrink: 0;
         }
@@ -794,10 +787,6 @@ input::placeholder {
             height: 1px;
             width: 100%;
             background-color: #cdcdcd;
-            @media screen and (max-width: $phone) {
-                height: 36px;
-                width: 1px;
-            }
         }
     }
     &-title {
@@ -853,6 +842,11 @@ input::placeholder {
         }
         &__controls {
             margin-bottom: 40px;
+        }
+        &__submit-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         &__submit-btn {
             margin: 0 auto;
@@ -930,11 +924,22 @@ input::placeholder {
             }
         }
     }
-    @media(max-width: $tablet) {
+    @media(max-width: $notebook) {
+        &-breadcrumbs {
+            column-gap: 0;
+        }
+    }
+    @media (max-width: $tablet) {
         min-height: 90vh;
+        &.no-vh {
+            min-height: auto;
+        }
         &.scrolled {
             max-height: none;
             overflow: auto;
+        }
+        &-breadcrumbs {
+            column-gap: 30px;
         }
         &-inner {
             padding: 25px 20px;
@@ -950,18 +955,39 @@ input::placeholder {
             flex-direction: column-reverse;
         }
     }
-    @media(max-width: $phone) {
+    @media (max-width: $phone) {
         min-height: auto;
         &-inner {
             padding: 15px;
         }
         &-form {
             padding: 40px 0;
-            
+        }
+        &-breadcrumbs {
+            &__spacer {
+                display: none;
+            }
+            &__item {
+                flex-shrink: initial;
+                &-title {
+                    text-align: center;
+                }
+            }
         }
     }
-    @media(max-width: $small-phone) {
+    @media (max-width: $small-phone) {
+        &-header {
+            &__logo img {
+                max-width: 120px;
+            }
+        }
         &-form {
+            &__submit-wrapper {
+                flex-direction: column;
+                row-gap: 30px;
+                margin-top: 30px;
+                align-items: baseline;
+            }
             &__submit-btn {
                 width: 100%;
             }
@@ -1019,7 +1045,6 @@ input::placeholder {
         display: flex;
         column-gap: 30px;
         align-items: center;
-        margin-bottom: 55px;
         @media screen and (max-width: $tablet) {
             flex-direction: column;
             row-gap: 20px;

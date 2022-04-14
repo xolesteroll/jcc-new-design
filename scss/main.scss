@@ -652,6 +652,36 @@ input::placeholder {
     }
 }
 
+.lang-list {
+    column-gap: 8px;
+    li {
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.25;
+        transition: opacity 0.2s;
+        &:hover {
+            opacity: 1;
+        }
+        &.eng {
+            background-image: url(../assets/images/lang-image-eng.png);
+        }
+        &.gr {
+            background-image: url(../assets/images/lang-image-gr.png);
+        }
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+
 .main {
     max-width: 100%;
     width: 100%;
@@ -673,47 +703,27 @@ input::placeholder {
         &__logo {
             display: none;
         }
-        &__lang {
-            &-list {
-                column-gap: 8px;
-            }
-            li {
-                display: flex;
-                align-items: center;
-            }
-            &-link {
-                width: 23px;
-                height: 23px;
-                border-radius: 50%;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                opacity: 0.25;
-                transition: opacity 0.2s;
-                &:hover {
-                    opacity: 1;
-                }
-                &.eng {
-                    background-image: url(../assets/images/lang-image-eng.png);
-                }
-                &.gr {
-                    background-image: url(../assets/images/lang-image-gr.png);
-                }
-                &.active {
-                    opacity: 1;
-                }
-            }
-        }
     }
     &-banner {
+        position: relative;
         min-height: 220px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        @media screen and (max-width: $small-phone) {
-            align-items: baseline;
+        &__overlay {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.4);
+        }
+        &__title {
+            text-align: center;
+            padding: 0 10px;
         }
     }
     &-breadcrumbs {
@@ -924,13 +934,16 @@ input::placeholder {
             }
         }
     }
-    @media(max-width: $notebook) {
+    @media (max-width: $notebook) {
         &-breadcrumbs {
             column-gap: 0;
         }
     }
     @media (max-width: $tablet) {
         min-height: 90vh;
+        &-banner {
+            min-height: 180px;
+        }
         &.no-vh {
             min-height: auto;
         }
@@ -957,6 +970,9 @@ input::placeholder {
     }
     @media (max-width: $phone) {
         min-height: auto;
+        &-banner {
+            min-height: 120px;
+        }
         &-inner {
             padding: 15px;
         }
@@ -994,6 +1010,9 @@ input::placeholder {
             &__controls {
                 margin-bottom: 20px;
             }
+            &__form {
+                padding-top: 30px;
+            }
         }
     }
 }
@@ -1009,9 +1028,6 @@ input::placeholder {
     &__title {
         position: relative;
         margin-bottom: 40px;
-        @media screen and (max-width: $phone) {
-            margin-left: 25px;
-        }
         &::before {
             content: "";
             position: absolute;
@@ -1024,7 +1040,30 @@ input::placeholder {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            @media screen and (max-width: $phone) {
+        }
+    }
+    &__img {
+        margin-bottom: 40px;
+    }
+    &__contacts {
+        width: 100%;
+        display: flex;
+        column-gap: 30px;
+        align-items: center;
+        &-title {
+            padding-top: 6px;
+        }
+    }
+    @media (max-width: $tablet) {
+        &__contacts {
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+    @media (max-width: $phone) {
+        &__title {
+            margin-left: 25px;
+            &::before {
                 left: -5px;
                 top: 4px;
                 width: 25px;
@@ -1032,25 +1071,11 @@ input::placeholder {
             }
         }
     }
-    &__img {
-        margin-bottom: 40px;
-        @media screen and (max-width: $smallest-phone) {
+    @media (max-width: $smallest-phone) {
+        &__img {
             img {
                 max-width: 250px;
             }
-        }
-    }
-    &__contacts {
-        width: 100%;
-        display: flex;
-        column-gap: 30px;
-        align-items: center;
-        @media screen and (max-width: $tablet) {
-            flex-direction: column;
-            row-gap: 20px;
-        }
-        &-title {
-            padding-top: 6px;
         }
     }
 }

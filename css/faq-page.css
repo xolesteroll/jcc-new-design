@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .main-banner {
-		background-image: url(../assets/images/faq-banner.jpg);
+		background-image: url(../assets/images/faq-banner-desk.jpg);
 }
 .main-inner {
 		background-color: #ffffff;
@@ -50,6 +50,9 @@
 		padding-top: 3px;
 }
 @media (max-width: 1025px) {
+		.main-banner {
+				background-image: url(../assets/images/faq-banner-tablet.jpg);
+		}
 		.main-search__inner {
 				flex-direction: column;
 		}
@@ -69,6 +72,9 @@
 		}
 }
 @media (max-width: 765px) {
+		.main-banner {
+				background-image: url(../assets/images/faq-banner-mobile.jpg);
+		}
 		.main-search__input-control {
 				flex-direction: column;
 				margin-bottom: 50px;
@@ -266,5 +272,9 @@
 		.faq-title {
 				font-size: 20px;
 				line-height: 24px;
+		}
+		.faq-list__answer {
+				margin-left: -25px;
+				margin-right: -25px;
 		}
 }

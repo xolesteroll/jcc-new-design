@@ -446,6 +446,11 @@ $smallest-phone: 340px;
             }
         }
     }
+    @media (max-width: $small-phone) {
+        &__title {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .main-form__checkbox-control {

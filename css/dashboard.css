@@ -64,43 +64,6 @@ main.dashboard-content button:focus {
 		font-weight: 700;
 		line-height: 12px;
 }
-.dashboard-nav__lang {
-		display: flex;
-		align-items: center;
-		border-width: 0px 1px;
-		border-color: #cdcdcd;
-		border-style: solid;
-		padding: 0 25px;
-}
-.dashboard-nav__lang-list {
-		column-gap: 8px;
-}
-.dashboard-nav__lang li {
-		display: flex;
-		align-items: center;
-}
-.dashboard-nav__lang-link {
-		width: 23px;
-		height: 23px;
-		border-radius: 50%;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		opacity: 0.25;
-		transition: opacity 0.2s;
-}
-.dashboard-nav__lang-link:hover {
-		opacity: 1;
-}
-.dashboard-nav__lang-link.eng {
-		background-image: url(../assets/images/lang-image-eng.png);
-}
-.dashboard-nav__lang-link.gr {
-		background-image: url(../assets/images/lang-image-gr.png);
-}
-.dashboard-nav__lang-link.active {
-		opacity: 1;
-}
 .dashboard-nav__text {
 		font-weight: 700;
 		font-size: 14px;

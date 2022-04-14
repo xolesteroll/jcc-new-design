@@ -6,7 +6,7 @@ $smallest-phone: 340px;
 
 .main {
     &-banner {
-        background-image: url(../assets/images/faq-banner.jpg);
+        background-image: url(../assets/images/faq-banner-desk.jpg);
     }
     &-inner {
         background-color: #ffffff;
@@ -57,6 +57,9 @@ $smallest-phone: 340px;
         }
     }
     @media (max-width: $tablet) {
+        &-banner {
+            background-image: url(../assets/images/faq-banner-tablet.jpg);
+        }
         &-search {
             &__inner {
                 flex-direction: column;
@@ -78,6 +81,9 @@ $smallest-phone: 340px;
         }
     }
     @media (max-width: $phone) {
+        &-banner {
+            background-image: url(../assets/images/faq-banner-mobile.jpg);
+        }
         &-search {
             &__input-control {
                 flex-direction: column;
@@ -293,6 +299,12 @@ $smallest-phone: 340px;
         &-title {
             font-size: 20px;
             line-height: 24px;
+        }
+        &-list {
+            &__answer {
+                margin-left: -25px;
+                margin-right: -25px;
+            }
         }
     }
 }

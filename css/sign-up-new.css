@@ -412,6 +412,11 @@
 				width: 100%;
 		}
 }
+@media (max-width: 450px) {
+		.sign-up__title {
+				margin-bottom: 0;
+		}
+}
 
 .main-form__checkbox-control {
 		text-align: left;

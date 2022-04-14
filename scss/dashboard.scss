@@ -65,43 +65,6 @@ main.dashboard-content {
             }
         }
     }
-    &__lang {
-        display: flex;
-        align-items: center;
-        border-width: 0px 1px;
-        border-color: #cdcdcd;
-        border-style: solid;
-        padding: 0 25px;
-        &-list {
-            column-gap: 8px;
-        }
-        li {
-            display: flex;
-            align-items: center;
-        }
-        &-link {
-            width: 23px;
-            height: 23px;
-            border-radius: 50%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 0.25;
-            transition: opacity 0.2s;
-            &:hover {
-                opacity: 1;
-            }
-            &.eng {
-                background-image: url(../assets/images/lang-image-eng.png);
-            }
-            &.gr {
-                background-image: url(../assets/images/lang-image-gr.png);
-            }
-            &.active {
-                opacity: 1;
-            }
-        }
-    }
     &__text {
         font-weight: 700;
         font-size: 14px;

@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@keyframes sk-bouncedelay {
+		0%, 80%, 100% {
+				transform: scale(0);
+		}
+		40% {
+				transform: scale(1);
+		}
+}
 *,
 * * {
 		box-sizing: border-box;
@@ -7,6 +15,11 @@
 body,
 html {
 		overflow-x: hidden;
+}
+
+html,
+body {
+		scroll-behavior: smooth;
 }
 
 html.no-scroll {
@@ -155,6 +168,24 @@ label {
 		font-size: 10px;
 		line-height: 12px;
 		font-weight: 700;
+}
+
+.slick-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		border: none;
+		background-color: transparent;
+		font-size: 32px;
+		color: var(--primary-color);
+}
+.slick-arrow.slick-next {
+		left: auto;
+		right: -10px;
+}
+.slick-arrow.slick-prev {
+		right: auto;
+		left: -10px;
 }
 
 a {
@@ -668,6 +699,45 @@ input::placeholder {
 		opacity: 1;
 }
 
+.preloader {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #fff;
+		z-index: 9999;
+}
+.preloader.show {
+		display: block;
+}
+.preloader-container {
+		position: absolute;
+		top: calc(50% - 30px);
+		left: calc(50% - 35px);
+}
+.preloader .spinner {
+		margin: 0px auto;
+		width: 70px;
+		text-align: center;
+}
+.preloader .spinner .bounce {
+		width: 18px;
+		height: 18px;
+		background-color: #80c242;
+		border-radius: 100%;
+		display: inline-block;
+		-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+.preloader .spinner .bounce1 {
+		animation-delay: -0.32s;
+}
+.preloader .spinner .bounce2 {
+		animation-delay: -0.16s;
+}
+
 .main {
 		max-width: 100%;
 		width: 100%;
@@ -997,11 +1067,12 @@ input::placeholder {
 .contact {
 		max-width: 815px;
 		width: 100%;
-		margin: 0 auto 70px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		margin: 0 auto 70px;
+		padding-top: 100px;
 }
 .contact__title {
 		position: relative;
@@ -1027,15 +1098,23 @@ input::placeholder {
 		width: 100%;
 		display: flex;
 		column-gap: 30px;
-		align-items: center;
 }
 .contact__contacts-title {
 		padding-top: 6px;
 }
+.contact__contacts-controls-top {
+		display: flex;
+		column-gap: 30px;
+		margin-bottom: 55px;
+}
 @media (max-width: 1025px) {
 		.contact__contacts {
 				flex-direction: column;
+				align-items: center;
 				row-gap: 20px;
+		}
+		.contact__contacts-controls {
+				text-align: center;
 		}
 }
 @media (max-width: 765px) {
@@ -1047,6 +1126,13 @@ input::placeholder {
 				top: 4px;
 				width: 25px;
 				height: 25px;
+		}
+		.contact__contacts-controls-top {
+				flex-direction: column;
+				row-gap: 12px;
+		}
+		.contact__contacts a {
+				min-width: 290px;
 		}
 }
 @media (max-width: 340px) {

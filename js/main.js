@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  setTimeout(() => {
+    $(".preloader").removeClass('show');
+  }, 2000);
 
   $(".popup-trigger").mouseenter(function () {
     $(this).prev(".input-popup").removeClass('hidden');
